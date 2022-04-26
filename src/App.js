@@ -1,16 +1,25 @@
-import React from 'react';
+import React from "react";
 /** Import de la donnée */
-import './App.css';
+import "./App.css";
 
-import Robot from './data/data';
+import Robots from "./data/data";
+
+import RobotCard from "./components/RobotCard";
 
 function App() {
-  console.log(Robot)
-  return (
-    <div className="App">
-      <h1>Robot Finder</h1>
-    </div>
-  );
+	/** ⚠️ Don't touch */
+	console.clear();
+	/** Don't touch */
+
+	console.log(Robots);
+	return (
+		<div className="App">
+			{Robots.map((robot, key) => (
+				<RobotCard key={key} robot={robot} />
+			))}
+	
+		</div>
+	);
 }
 
 export default App;
