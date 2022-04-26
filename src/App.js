@@ -1,16 +1,31 @@
-import React from 'react';
+import React from "react";
 /** Import de la donnée */
-import './App.css';
+import Robots from "./data/data";
+import RobotCard from "./components/RobotCard";
 
-import Robot from './data/data';
+import "./App.css";
 
 function App() {
-  console.log(Robot)
-  return (
-    <div className="App">
-      <h1>Robot Finder</h1>
-    </div>
-  );
+	/**
+	 * Ne pas toucher
+	 */
+	console.clear();
+	/**
+	 * Ne pas toucher
+	 */
+
+	/**
+	 * -   4/ Création d'un composant `<RobotAddress />` permettant d'afficher les informations de l'adresse (Suite, zipcode, city). Import et mise en place dans le `<RobotCard />`. Puis, on va ajouter un bouton _toggle_ permettant d'afficher ou non l'adresse. Ajout d'un state [display, setDisplay] initialisé à false. Onclick sur le bouton, on inverse la valeur de display (** si true, alors false et si false alors true **). Puis on se sert de cette valeur pour afficher ou non les infos adresse avec un opérateur ternaire. Intégrer le css de cette nouvelle étape pour finir.
+	 */
+	console.log(Robots);
+	return (
+		<div className="App">
+			<h1>Robot Finder</h1>
+			{Robots.map((fullRobot, i) => {
+				return <RobotCard key={i} robot={fullRobot} />;
+			})}
+		</div>
+	);
 }
 
 export default App;

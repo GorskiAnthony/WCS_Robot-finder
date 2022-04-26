@@ -2,3 +2,8 @@
   text-align: center;
 }
 
+.block{
+  border: 1px solid black;
+  margin: 1rem;
+}
+
